@@ -1,0 +1,65 @@
+server:
+  port: 8081
+  address: 127.0.0.1
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/pin
+    username: root
+    password: 123456
+    type: org.apache.commons.dbcp2.BasicDataSource
+    dbcp2:
+      max-idle: 5
+      max-total: 30
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  #redis config
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    timeout: 5000
+    pool:
+      max-idle: 8
+      min-idle: 0
+      max-active: 8
+      max-wait: -1
+      testOnBorrow: true
+
+  # mongodb config
+  data:
+    mongodb:
+      uri: mongodb://pin:123456@localhost:27017/ticc
+      repositories:
+        enabled: true
+#      authentication-database: admin
+#      database: ticc
+#      username: pin
+#      password: 123456
+#      host: localhost
+#      port: 27017
+
+# springMVC config
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+      #    static-path-pattern: /**
+#    resources:
+#      static-locations: classpath:/WEB-INF/resources/
+
+#mybatis config
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.gzticc.springbootdemo.pojo
+
+
+
+
+
+
