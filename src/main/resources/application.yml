@@ -4,6 +4,8 @@ server:
 spring:
   profiles:
     active: dev
+  thymeleaf:
+    prefix: classpath:/templates/
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://127.0.0.1:3306/pin
@@ -45,10 +47,10 @@ spring:
 #      port: 27017
 
 # springMVC config
-  mvc:
-    view:
-      prefix: /WEB-INF/jsp/
-      suffix: .jsp
+#  mvc:
+#    view:
+#      prefix: /WEB-INF/jsp/
+#      suffix: .jsp
       #    static-path-pattern: /**
 #    resources:
 #      static-locations: classpath:/WEB-INF/resources/
