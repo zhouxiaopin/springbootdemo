@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 @RequestMapping("/page")
@@ -16,8 +17,9 @@ public class PageController {
     TestProperties testProperties;
 //    @RequestMapping(value = "/index", method = RequestMethod.GET)
     @GetMapping("/index")
-    public String index(){
-        return "index";
+    public ModelAndView index(ModelAndView mv){
+        mv.setViewName("index");
+        return mv;
     }
     @GetMapping("/test1")
     public BaseResult test1() throws Exception{
